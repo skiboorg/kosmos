@@ -1,0 +1,113 @@
+.header
+  background: url(../img/header-bg.jpg)
+  height: 760px
+  padding-top: 40px
+  margin-bottom: 170px
+  &-nav-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &-logo
+    display: flex
+    align-items: center
+    p
+      max-width: 230px
+      margin-left: 20px
+      letter-spacing: 0.21px
+      line-height: 21px
+    span
+      width: 39px
+      height: 39px
+      border-radius: 5px
+      background-color: $color-red
+      display: flex
+      align-items: center
+      justify-content: center
+      color: #fff
+      font-size: 26px
+  &-nav
+    min-width: 460px
+    &__nav-wrapper
+      display: flex
+      justify-content: space-between
+      li
+        a
+          color: #000000
+  &-phone
+    background: #ffffff
+    border-radius: 5px
+    transform: skewX(-10deg)
+    padding: 15px 30px
+    p
+      transform: skewX(10deg)
+    span
+      transform: skewX(10deg)
+
+
+//header inner
+.header-inner
+  h1
+    font-family: $f-GM
+    font-size: 48px
+    color: $color-text-d-grey
+    margin-top: 100px
+    margin-bottom: 50px
+    max-width: 590px
+    line-height: 50px
+    span
+      font-family: $f-GL
+
+  p
+    position: relative
+    color: $color-text-m-grey
+    font-family: $f-GL
+    font-size: 21px
+    line-height: 32px
+    letter-spacing: 0.32px
+    margin-left: 75px
+    max-width: 350px
+    margin-bottom: 60px
+
+    &:before
+      content: ''
+      position: absolute
+      width: 20px
+      height: 6px
+      transform: skewX(-25deg) rotate(-89deg)
+      left: -20px
+      background: $color_red
+  a
+    margin-bottom: 100px
+    padding: 20px 50px
+    margin-left: 60px
+
+  .header-features-grid
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(340px, 360px))
+    grid-gap: 15px
+    justify-content: center
+
+  .header-feature
+    background: url(../img/feat.png) no-repeat
+    height: 170px
+    background-position-x: center
+    background-position-y: center
+    position: relative
+    p
+      position: absolute
+      bottom: 40px
+      left: 50px
+      max-width: 80%
+      font-family: $f-GR
+      color: $color-text-d-grey
+      font-size: 16px
+      margin: 0
+      line-height: 24px
+      letter-spacing: 0.24px
+      &:before
+        content: none
+    span
+      font-family: $f-GM
+
+

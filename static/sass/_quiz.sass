@@ -1,0 +1,75 @@
+.quiz
+  &-inner
+    max-width: 950px
+    margin: 0 auto
+    border: 1px solid red
+    
+    
+.tabs
+  position: relative /* Относительное позиционирование */
+  display: flex
+  justify-content: space-between
+   
+.tab-title
+  display: inline-block
+
+
+.tab input[type="radio"]
+ display: none
+.tab-title
+  position: relative
+  width: 40px
+  height: 40px
+  background: #ffffff
+  border: 1px solid #cecece
+  border-radius: 50%
+  span
+    position: absolute
+    color: #cecece
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+    bottom: 9px
+
+
+
+.tab-content
+  position: absolute /* Абсолютное позиционирование */
+
+  padding: 10px /* Поля вокруг текста */
+  left: 0 /* Размещаем у левого края */
+  width: calc(100% - 20px) /* Ширина содержимого */
+  display: none /* Прячем вкладку */
+
+.tab :checked + .tab-title
+  position: relative
+  width: 40px
+  height: 40px
+  background: $color-red
+  border: 3px solid #ffffff
+  border-radius: 50%
+  &::after
+    content: ''
+    position: absolute
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    border: 1px solid $color-red
+    bottom: -4px
+    left: -4px
+  span
+    position: absolute
+    color: #ffffff
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+    bottom: 9px
+
+
+.tab :checked ~ .tab-content
+  display: flex /* Показываем активную вкладку */
+   
