@@ -1,75 +1,130 @@
 .quiz
+  height: 1030px
   &-inner
     max-width: 950px
+    height: 490px
     margin: 0 auto
     border: 1px solid red
-    
-    
-.tabs
-  position: relative /* Относительное позиционирование */
-  display: flex
-  justify-content: space-between
-   
+    &-tabs
+      position: relative
+      display: flex
+      justify-content: space-between
+      &::before
+        content: ''
+        width: 100%
+        height: 1px
+        position: absolute
+        top: 50%
+        border-top: 1px dashed $color-border
+.tab
+  z-index: 1
 .tab-title
   display: inline-block
 
-
 .tab input[type="radio"]
- display: none
+  display: none
+
 .tab-title
-  position: relative
-  width: 40px
-  height: 40px
-  background: #ffffff
-  border: 1px solid #cecece
+  display: inline-block
+  width: 50px
+  height: 50px
   border-radius: 50%
+  padding: 4px
+  background: #ffffff
+  box-sizing: border-box
+  transition: background-color 0.3s ease-in
+  cursor: pointer
   span
-    position: absolute
-    color: #cecece
-    left: 0
-    right: 0
-    margin-left: auto
-    margin-right: auto
-    text-align: center
-    bottom: 9px
-
-
+    background: #ffffff
+    border: 1px solid #bebebe
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    color: #bebebe
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: 'MuseoSansCyrl-500', sans-serif
+    font-size: 16px
 
 .tab-content
-  position: absolute /* Абсолютное позиционирование */
-
-  padding: 10px /* Поля вокруг текста */
-  left: 0 /* Размещаем у левого края */
-  width: calc(100% - 20px) /* Ширина содержимого */
-  display: none /* Прячем вкладку */
-
+  background: url(../img/quiz-bg.png) no-repeat
+  height: 459px
+  position: absolute
+  left: 0
+  width: calc(100% - 2*100px)
+  padding: 100px
+  background-size: contain
+  display: none
+  &-group
+    margin-bottom: 10px
+    &__radio-label
+      position: relative
+      cursor: pointer
+      &::before
+        position: absolute
+        content: ''
+        height: 20px
+        width: 20px
+        border-radius: 50%
+        border: 1px solid $color-border
+        bottom: -2px
+        left: -25px
+    &__radio-input:checked
+      + .tab-content-group__radio-label::after
+        position: absolute
+        content: ''
+        height: 14px
+        width: 14px
+        border-radius: 50%
+        background: $color-l-blue
+        bottom: 1px
+        left: -22px
 .tab :checked + .tab-title
-  position: relative
-  width: 40px
-  height: 40px
-  background: $color-red
-  border: 3px solid #ffffff
-  border-radius: 50%
-  &::after
-    content: ''
-    position: absolute
-    width: 48px
-    height: 48px
-    border-radius: 50%
-    border: 1px solid $color-red
-    bottom: -4px
-    left: -4px
+  border: 1px solid $color_red
+  transition: background-color 0.3s ease-in
   span
-    position: absolute
+    background: $color_red
+    border: none
     color: #ffffff
-    left: 0
-    right: 0
-    margin-left: auto
-    margin-right: auto
-    text-align: center
-    bottom: 9px
-
 
 .tab :checked ~ .tab-content
-  display: flex /* Показываем активную вкладку */
-   
+  display: block
+
+.quiz-bottom
+  max-width: 1080px
+  margin: 0 auto
+  border: 1px solid green
+  display: flex
+  justify-content: space-between
+  &-info
+    flex-basis: 70%
+    h3
+      position: relative
+      margin-left: 60px
+      font-family: $f-GM
+      font-size: 48px
+      color: $color-text-d-grey
+      margin-bottom: 75px
+      &::before
+        position: absolute
+        content: 'K'
+        font-family: $f-GR
+        font-size: 212px
+        color: $color-text-d-grey
+        opacity: .1
+        line-height: 0
+        left: 0
+        top: 0
+    p
+      position: relative
+      margin-left: 130px
+      line-height: 24px
+      &::before
+        position: absolute
+        content: ''
+        width: 15px
+        height: 5px
+        background: $color-red
+        left: -30px
+        top: 10px

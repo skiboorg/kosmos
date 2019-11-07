@@ -6,6 +6,8 @@ $color-l-blue: #5d96e5
 $color-text-d-grey: #1f1f1f
 $color-text-m-grey: #292929
 
+$color-border: #cecece
+
 $f-M300: 'MuseoSansCyrl-300',sans-serif
 $f-M900: 'MuseoSansCyrl-900',sans-serif
 $f-GR: 'Gotham Regular',sans-serif
@@ -13,18 +15,30 @@ $f-GB: 'Gotham Bold',sans-serif
 $f-GL: 'Gotham Light',sans-serif
 $f-GM: 'Gotham Medium',sans-serif
 
-
+h1
+  color: $color-text-d-grey
+  font-family: $f-GR
+  font-size: 45px
+  margin-bottom: 50px
+  line-height: 45px
+h3
+  color: $color-text-d-grey
+  font-family: $f-GM
+  font-size: 48px
 
 .container
   max-width: 1140px
   padding: 0 15px
-
   margin: 0 auto
 
+.container-sm
+  max-width: 945px
+  padding: 0 15px
+  margin: 0 auto
 .btn, button
   border: none
   display: inline-block
-
+  box-sizing: border-box
   text-decoration: none
   cursor: pointer
   text-align: center
@@ -54,3 +68,32 @@ $f-GM: 'Gotham Medium',sans-serif
     color: $color-text-d-grey
     font-family: $f-GR
     font-size: 24px
+
+.shadow-box
+  box-sizing: border-box
+  border-radius: 10px
+  background-color: #fff
+  box-shadow: 0 0 51px 0 rgba(0, 0, 0, 0.1)
+  padding: 5px
+  &-inner
+    box-sizing: border-box
+    border-radius: 10px
+    min-height: 100%
+    height: fit-content
+    border: 1px dashed $color-border
+
+.breadcrumbs
+  font-family: $f-GL
+  font-size: 16px
+  margin-bottom: 50px
+  ul
+    display: flex
+    flex-wrap: wrap
+    li
+      &:after
+        content: '/'
+        margin: 0 10px
+      &:last-child:after
+        content: ''
+      a
+        color: $color_l_blue

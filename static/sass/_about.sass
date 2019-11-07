@@ -1,0 +1,19 @@
+.about
+  position: relative
+  &-big-image
+    position: absolute
+    top: 148px
+    left: 0
+    right: 0
+    text-align: center
+  &-grid
+    display: grid
+    grid-template-columns: repeat(3,1fr)
+    grid-template-rows: repeat(3,1fr)
+    .box-1
+      grid-row: 3
+    .box-2
+      grid-column: 3
+  h3
+    line-height: 50px
+    max-width: 750px
