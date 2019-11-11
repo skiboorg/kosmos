@@ -25,7 +25,82 @@
 
 
 {% block js %}
+<script src="{% static 'js/phone-mask.min.js' %}"></script>
+    <script>
+     csrfmiddlewaretoken = document.getElementsByName('csrfmiddlewaretoken')[0].defaultValue
+     function toggleModal(type) {
 
+        document.getElementsByClassName(type)[0].classList.toggle('modal-active')
+        return false
+
+    }
+       function sendQuiz() {
+            console.log('send')
+            document.getElementById('quiz_name').classList.remove('error-field')
+            document.getElementById('quiz_phone').classList.remove('error-field')
+            let fd = new FormData();
+            fd.append('csrfmiddlewaretoken', csrfmiddlewaretoken)
+            for (x of inputs) {
+                if (x.checked) {
+                    console.log(x.value)
+                    console.log(x.getAttribute("name"))
+                    fd.append(x.getAttribute('name'), x.value)
+                }
+            }
+            fd.append('name', document.getElementById('quiz_name').value)
+            fd.append('phone', document.getElementById('quiz_phone').value)
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', '/callback/quiz/', true);
+            xhr.onload = function () {
+                let result = JSON.parse(this.response)['result']
+                console.log(result)
+                if ( result === 'ok') {
+                    document.getElementsByClassName('last-question')[0].style.display = 'none'
+                    document.getElementsByClassName('success-message')[0].style.display = 'block'
+                }
+                else {
+                    if (result === 'name'){
+                        document.getElementById('quiz_name').classList.add('error-field')
+                    }
+                    if (result === 'phone'){
+                        document.getElementById('quiz_phone').classList.add('error-field')
+                    }
+                }}
+            xhr.send(fd);
+        }
+
+        function sendForm(type) {
+            document.getElementById(`${type}_name`).classList.remove('error-field')
+            document.getElementById(`${type}_phone`).classList.remove('error-field')
+            console.log('send')
+            let fd = new FormData();
+            fd.append('csrfmiddlewaretoken', csrfmiddlewaretoken)
+
+            fd.append('userName', document.getElementById(`${type}_name`).value)
+            fd.append('userPhone', document.getElementById(`${type}_phone`).value)
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', '/callback/callback/', true);
+            xhr.onload = function () {
+                let result = JSON.parse(this.response)['result']
+                console.log(result)
+                if ( result === 'ok') {
+                    document.getElementById(`${type}_content`).innerHTML='<h5>Спасибо за обращение, Вам перезвонят</h5>'
+
+                }
+                else {
+                    if (result === 'name'){
+                       document.getElementById(`${type}_name`).classList.add('error-field')
+                    }
+
+                    if (result === 'phone'){
+                        document.getElementById(`${type}_phone`).classList.add('error-field')
+                    }
+                }}
+            xhr.send(fd);
+        }
+    </script>
 {% endblock %}
 </body>
 </html>

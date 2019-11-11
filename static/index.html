@@ -16,7 +16,7 @@
             <p>Более 10-ти лет ведём бух учёт самых разных компаний</p>
 
         </div>
-        <div class="header-nav">
+        <nav class="header-nav">
             <ul class="header-nav__nav-wrapper">
                 <li><a href="#">Главная</a></li>
                 <li><a href="#">Отзывы</a></li>
@@ -24,7 +24,7 @@
                 <li><a href="#">О компании</a></li>
 
             </ul>
-        </div>
+        </nav>
 
         <div class="header-phone">
             <p>8 800 999 99 99</p>
@@ -72,37 +72,143 @@
             <p>Это даст возможность нам оценить ваше положение и помочь вам</p>
         </div>
         <div class="quiz-inner">
-            <div class="quiz-inner-tabs">
-                <div class="tab">
-                    <input type="radio"  id="tab1" name="tab-group" checked>
-                    <label for="tab1" class="tab-title"><span>1</span></label>
-                    <div class="tab-content">
-                        <div class="tab-content-group">
-                            <input class="tab-content-group__radio-input" name="tab1-q" id="q1" type="radio" checked>
-                            <label class="tab-content-group__radio-label" for="q1">Вопрос 1</label>
+            <form>
+                <div class="quiz-inner-tabs">
+                    <div class="tab">
+                        <input type="radio"  id="tab1" name="tab-group" checked>
+                        <label for="tab1" onclick="changeTab(1)" class="tab-title"><span>1</span></label>
+                        <div class="tab-content">
+                            <p>Обслуживались ли Вы ранее у сторонней бухгалтерии?</p>
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab1-q" id="q1" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q1">Да</label>
 
-                        </div><!--//tab-content-group-->
-                        <div class="tab-content-group">
-                            <input class="tab-content-group__radio-input" name="tab1-q" id="q2" type="radio" >
-                            <label class="tab-content-group__radio-label" for="q2">Вопрос 2</label>
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab1-q" id="q2" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q2">Нет</label>
 
-                        </div><!--//tab-content-group-->
+                            </div><!--//tab-content-group-->
 
-                    </div>
+                        </div>
+                    </div><!--//tab-->
+                    <div class="tab">
+                        <input type="radio"  id="tab2" name="tab-group">
+                        <label for="tab2" onclick="changeTab(2)" class="tab-title"><span>2</span></label>
+                        <div class="tab-content">
+                            <p>Количество штатных единиц?</p>
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab2-q" id="q3" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q3">До 10</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab2-q" id="q4" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q4">Свыше 10</label>
+
+                            </div><!--//tab-content-group-->
+
+                        </div>
+                    </div><!--//tab-->
+                    <div class="tab">
+                        <input type="radio"  id="tab3" name="tab-group">
+                        <label for="tab3" onclick="changeTab(3)" class="tab-title"><span>3</span></label>
+                        <div class="tab-content">
+                            <p>Количество операций ?</p>
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab3-q" id="q5" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q5">До 15</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab3-q" id="q6" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q6">От 15 до 35</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab3-q" id="q7" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q7">От 35 до 55</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab3-q" id="q8" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q8">От 55 до 105</label>
+
+                            </div><!--//tab-content-group-->
+                        </div>
+
+                    </div><!--//tab-->
+                    <div class="tab">
+                        <input type="radio"  id="tab4" name="tab-group">
+                        <label for="tab4" onclick="changeTab(4)" class="tab-title"><span>4</span></label>
+                        <div class="tab-content">
+                            <p>Система налогообложения?</p>
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab4-q" id="q9" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q9">ОСНО</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab4-q" id="q10" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q10">УСН</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab4-q" id="q11" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q11">ЕНВД</label>
+
+                            </div><!--//tab-content-group-->
+
+                        </div>
+
+                    </div><!--//tab-->
+                    <div class="tab">
+                        <input type="radio"  id="tab5" name="tab-group">
+                        <label for="tab5" onclick="changeTab(5)" class="tab-title"><span>5</span></label>
+                        <div class="tab-content">
+                            <p>Количество контрагентов?</p>
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab5-q" id="q12" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q12">До 10</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab5-q" id="q13" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q13">От 10 до 30</label>
+
+                            </div><!--//tab-content-group-->
+                            <div class="tab-content-group">
+                                <input class="tab-content-group__radio-input" name="tab5-q" id="q14" type="radio" >
+                                <label class="tab-content-group__radio-label" for="q14">Свыше 30</label>
+
+                            </div><!--//tab-content-group-->
+                        </div>
+
+                    </div><!--//tab-->
+                    <div class="tab">
+                        <input type="radio"  id="tab6" name="tab-group">
+                        <label for="tab6" onclick="changeTab(6)" class="tab-title"><span>6</span></label>
+                        <div class="tab-content">
+                            <div class="last-question">
+                              <p>Оставьте контактные данные</p>
+                             <input type="text" name="name" placeholder="Как к Вам обращаться?">
+                            <input type="text" name="name" placeholder="Ваш сотовый номер">
+                            <button type="submit">Отправить</button>
+                            </div>
+                            <div class="success-message">
+                                <p>Спасибо, информация отправлена</p>
+                                <p>С вами свяжется наш специалист</p>
+                            </div>
+
+                        </div>
+
+                    </div><!--//tab-->
+
                 </div>
-                <div class="tab">
-                    <input type="radio"  id="tab2" name="tab-group">
-                    <label for="tab2" class="tab-title"><span>3</span></label>
-                    <div class="tab-content">Два</div>
-                </div>
-                <div class="tab">
-                    <input type="radio"  id="tab3" name="tab-group">
-                    <label for="tab3" class="tab-title"><span>2</span></label>
-                    <div class="tab-content">Три</div>
-                </div>
-            </div>
+            </form>
+
         </div>
-    <div class="quiz-bottom">
+        <div class="quiz-bottom">
             <div class="quiz-bottom-info">
                 <h3>Работаем на результат</h3>
                 <p>Абсолютно по любому вопросу проведём бесплатную квалифицированную консультацию</p>
@@ -115,10 +221,10 @@
                     <h5>Остались вопросы ?</h5>
                     <span>Мы перезвоним</span>
 
-                        <input type="text" name="name" placeholder="Как к Вам обращаться?">
-                        <input type="text" name="name" placeholder="Ваш сотовый номер">
-                        <a   class="btn">Перезвоните мне</a>
-                        <p>Нажимая на кнопку, в принимаете <a href="#">условия передачи данных</a></p>
+                    <input type="text" name="name" placeholder="Как к Вам обращаться?">
+                    <input type="text" name="name" placeholder="Ваш сотовый номер">
+                    <a   class="btn">Перезвоните мне</a>
+                    <p>Нажимая на кнопку, в принимаете <a href="#">условия передачи данных</a></p>
 
 
 
@@ -159,41 +265,41 @@
 
 </div><!--//main-->
 <section class="map">
-        <div class="container map-inner">
-            <div class="shadow-box">
-                <div class="shadow-box-inner">
-                    <div class="map-inner-contact">
-                        <p>Номер телефона:</p>
-                        <a href="#">+7 923 657 45 45</a>
-                    </div>
-                    <div class="map-inner-contact">
-                        <p>Номер телефона:</p>
-                        <a href="#">+7 923 657 45 45</a>
-                    </div>
-                    <div class="map-inner-contact">
-                        <p>Номер телефона:</p>
-                        <a href="#">+7 923 657 45 45</a>
-                    </div>
-
+    <div class="container map-inner">
+        <div class="shadow-box">
+            <div class="shadow-box-inner">
+                <div class="map-inner-contact">
+                    <p>Номер телефона:</p>
+                    <a href="#">+7 923 657 45 45</a>
+                </div>
+                <div class="map-inner-contact">
+                    <p>Номер телефона:</p>
+                    <a href="#">+7 923 657 45 45</a>
+                </div>
+                <div class="map-inner-contact">
+                    <p>Номер телефона:</p>
+                    <a href="#">+7 923 657 45 45</a>
                 </div>
 
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 <footer class="footer">
     <div class="container">
         <div class="footer-top ">
             <div class="footer-top-info">
                 <p>Все материалы данного сайта защищены авторским правом. Полное или частичное копирование запрещено. Информация предназначена для аудитории 14+</p>
-                 <div class="footer-social">
+                <div class="footer-social">
 
 
-                <ul>
-                    <li><a href="#" rel="nofollow"><span class="vk_icon"></span></a></li>
-                    <li><a href="#" rel="nofollow"><span class="fb_icon"></span></a></li>
-                    <li><a href="#" rel="nofollow"><span class="inst_icon"></span></a></li>
-                </ul>
-            </div>
+                    <ul>
+                        <li><a href="#" rel="nofollow"><span class="vk_icon"></span></a></li>
+                        <li><a href="#" rel="nofollow"><span class="fb_icon"></span></a></li>
+                        <li><a href="#" rel="nofollow"><span class="inst_icon"></span></a></li>
+                    </ul>
+                </div>
             </div>
             <div class="footer-top-list not-visible-sm">
                 <p>Реквизиты в России:</p>
@@ -231,4 +337,26 @@
 
 
 </body>
+<script>
+    let labels = document.getElementsByClassName('tab-content-group__radio-label'),
+        cur_tab = 1
+
+    for (x of labels){
+        x.addEventListener('click',function () {
+            changeTab()
+        })
+    }
+    function changeTab(id) {
+        if (id){
+            cur_tab = id
+        }else{
+            document.getElementById(`tab${cur_tab}`).checked = false
+            cur_tab +=1
+            document.getElementById(`tab${cur_tab}`).checked = true
+
+        }
+    }
+
+
+</script>
 </html>

@@ -55,7 +55,7 @@
 
             <div class="footer-top-phones text-right">
                 <p>+7 (351) 230 80 40</p>
-                <a href="#" class="btn ">Перезвоните мне</a>
+                <a onclick="toggleModal('callback-modal')" class="btn ">Перезвоните мне</a>
             </div>
 
 
@@ -66,3 +66,34 @@
 
     </div>
 </footer>
+
+    <div id="callback_modal" class="modal">
+        <div class="modal-content callback-modal">
+            <div class="modal-form">
+
+                <b class="modal-close" onclick="toggleModal('callback-modal')">&#215;</b>
+               {% csrf_token %}
+               <div class="shadow-box">
+                    <div id="modal_content" class="shadow-box-inner">
+                        <h5>Остались вопросы ?</h5>
+                        <span>Мы перезвоним</span>
+
+                        <input type="text" id="modal_name" placeholder="Как к Вам обращаться?">
+                        <input type="tel" id="modal_phone"  class="masked-phone" placeholder="Ваш сотовый номер" data-phonemask="+7(___)___-__-__" />
+                        <a   class="btn" onclick="sendForm('modal')">Перезвоните мне</a>
+                        <p>Нажимая на кнопку, в принимаете <a href="#">условия передачи данных</a></p>
+
+
+
+                    </div>
+
+                </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div><!--callback_order_modal -->

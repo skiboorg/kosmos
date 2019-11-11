@@ -29,6 +29,21 @@ h3
 button[type='button']
   display: none
 
+input
+  border: none
+  background: #f8f9fb
+  padding: 30px 25px
+  font-family: $f-GR
+  font-size: 16px
+  color: $color-text-m-grey
+  margin-bottom: 10px
+  width: 100%
+  box-sizing: border-box
+  &::placeholder
+    color: #83868f
+    font-family: $f-GR
+    font-size: 16px
+
 
 .container
   max-width: 1140px
@@ -101,3 +116,86 @@ button[type='button']
         content: ''
       a
         color: $color_l_blue
+
+.success-message
+  display: none
+  p
+    color: $color-text-d-grey
+    font-family: $f-GR
+    font-size: 24px
+
+
+.masked-phone
+  color: #83868f
+  font-family: $f-GR
+  font-size: 16px
+
+.error-field
+  border: 1px solid $color-red
+
+
+.modal
+  position: relative
+  z-index: 999
+  &-form
+    position: relative
+  &-close
+    position: absolute
+    right: 15px
+    top: 0
+    font-size: 40px
+    cursor: pointer
+    color: $color-text-d-grey
+    opacity: .9
+    &:hover
+      opacity: 1
+
+  &-content
+    position: fixed
+    display: flex
+    overflow: auto
+    //padding-bottom: 15px
+    //padding-top: 15px
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    top: 0
+    left: 10000px
+    width: 100%
+    height: 100%
+    background: rgba(21, 21, 21, 0.41)
+    transition: left 0.3s ease-out
+    & .shadow-box
+      width: 320px
+    & .shadow-box-inner
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 30px
+      justify-content: center
+    h5
+      font-family: $f-GB
+      font-size: 21px
+      color: $color-text-d-grey
+      text-align: center
+    span
+      font-family: $f-GR
+      font-size: 16px
+      color: $color-text-m-grey
+      margin-bottom: 40px
+    & .btn
+      margin: 30px 0
+      width: 100%
+      padding: 20px 10px
+    p
+      font-family: $f-M300
+      font-size: 12px
+      color: $color-text-m-grey
+      max-width: 200px
+      text-align: center
+      a
+        color: $color-l-blue
+
+  &-content.modal-active
+    left: 0
+    transition: left 0.3s ease-in
