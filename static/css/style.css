@@ -1829,13 +1829,18 @@ x:-o-prefocus,
     border-top-right-radius: 10px;
   }
 
+  .last-question input,
+  .last-question button {
+    width: 100%;
+  }
+
   .quiz {
     padding: 0 10px;
   }
 
   .quiz-inner {
     margin-top: 10px;
-    height: 250px;
+    height: 310px;
   }
 
   .quiz-inner-tabs {
