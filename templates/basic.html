@@ -27,6 +27,16 @@
 {% block js %}
 <script src="{% static 'js/phone-mask.min.js' %}"></script>
     <script>
+       let mobile_button = document.getElementsByClassName('mobile-toggle')[0]
+            let mobile_menu = document.getElementsByClassName('header-nav__nav-wrapper')[0]
+
+             mobile_button.onclick = function () {
+                this.classList.toggle('mobile-toggle-active')
+
+                mobile_menu.classList.toggle('mobile-active')
+            }
+
+
      csrfmiddlewaretoken = document.getElementsByName('csrfmiddlewaretoken')[0].defaultValue
      function toggleModal(type) {
 

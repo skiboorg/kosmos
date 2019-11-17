@@ -213,7 +213,7 @@
                     </div>
                 </div><!--//shadow-box-->
             </div><!--//about-grid-->
-            <div class="about-big-image">
+            <div class="about-big-image hidden-mobile">
                 <img src="{% static 'img/about-big-image.png' %}" alt="">
             </div>
         </section><!--//about-->
@@ -227,6 +227,7 @@
 {% block js %}
     {{ block.super }}
     <script>
+
         let labels = document.getElementsByClassName('tab-content-group__radio-label'),
             inputs =  document.getElementsByClassName('tab-content-group__radio-input'),
 

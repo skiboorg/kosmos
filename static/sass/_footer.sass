@@ -60,5 +60,21 @@
   background: url(../img/social-icons.jpg)
   background-position-x: 97%
 
+@media (max-width: 425px)
+  .footer
+    &-top
+      justify-content: center
+      p
+        display: none
+      &-info
+        flex-basis: 100%
+        order: 1
+      &-list
+        flex-basis: 100%
+        text-align: center
+        margin-bottom: 20px
 
-
+    &-social
+      justify-content: center
+      order: 2
+      margin-top: 20px

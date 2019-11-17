@@ -74,6 +74,11 @@
         font-size: 16px
         color: $color-text-m-grey
 
+@media (max-width: 425px)
+  .service-feature
+    &-item
+      flex-basis: 100%
+
 .reviews
   margin-bottom: 140px
 
@@ -81,6 +86,7 @@
   border-radius: 10px
   box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)
   display: flex
+  flex-wrap: wrap
   img
     border-bottom-left-radius: 10px
     border-top-left-radius: 10px
@@ -128,3 +134,11 @@
 
 .callback-form
   margin-bottom: 140px
+
+
+@media (max-width: 425px)
+  .slider-item
+    img
+      border-bottom-left-radius: 0
+      border-top-left-radius: 10px
+      border-top-right-radius: 10px

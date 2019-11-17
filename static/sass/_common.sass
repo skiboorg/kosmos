@@ -15,12 +15,19 @@ $f-GB: 'Gotham Bold',sans-serif
 $f-GL: 'Gotham Light',sans-serif
 $f-GM: 'Gotham Medium',sans-serif
 
+
+
 h1
   color: $color-text-d-grey
   font-family: $f-GR
   font-size: 45px
   margin-bottom: 50px
   line-height: 45px
+
+@media (max-width: 425px)
+  h1
+    font-size: 30px
+    margin-bottom: 20px
 h3
   color: $color-text-d-grey
   font-family: $f-GM
@@ -87,6 +94,13 @@ input
     color: $color-text-d-grey
     font-family: $f-GR
     font-size: 24px
+
+@media (max-width: 425px)
+  .section-header
+    h3
+      font-size: 20px
+    p
+      font-size: 16px
 
 .shadow-box
   box-sizing: border-box
@@ -199,3 +213,9 @@ input
   &-content.modal-active
     left: 0
     transition: left 0.3s ease-in
+
+@media (max-width: 425px)
+  .hidden-mobile
+    display: none !important
+  section
+    margin-bottom: 40px !important

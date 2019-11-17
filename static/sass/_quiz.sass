@@ -106,8 +106,10 @@
 
 .quiz-bottom
   max-width: 1080px
+  padding: 10px
   margin: 0 auto
   display: flex
+  flex-wrap: wrap
   justify-content: space-between
   & .shadow-box
     flex-basis: 35%
@@ -177,3 +179,77 @@
         left: -30px
         top: 10px
         border-radius: 2px
+
+
+@media (max-width: 425px)
+  .quiz
+    padding: 0 10px
+    &-inner
+      margin-top: 10px
+      height: 250px
+      &-tabs
+        justify-content: space-evenly
+
+  .tab-title
+    display: inline-block
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    padding: 4px
+    background: #ffffff
+    box-sizing: border-box
+    transition: background-color 0.3s ease-in
+    cursor: pointer
+    span
+      background: #ffffff
+      border: 1px solid #bebebe
+      width: 30px
+      height: 30px
+      border-radius: 50%
+      color: #bebebe
+      display: flex
+      align-items: center
+      justify-content: center
+      font-family: 'MuseoSansCyrl-500', sans-serif
+      font-size: 16px
+  .tab-content
+    background: none
+    padding: 30px
+    left: 0
+    right: 0
+    width: auto
+    margin: auto
+    height: auto
+
+  .quiz-bottom
+    &-info
+      flex-basis: 100%
+      h3
+        position: relative
+        margin-left: 0
+        font-family: $f-GM
+        font-size: 20px
+        color: $color-text-d-grey
+        margin-bottom: 20px
+        letter-spacing: -1.9px
+        &::before
+          content: none
+
+      p
+        position: relative
+        margin-left: 30px
+        font-family: $f-GL
+        font-size: 13px
+        color: $color-text-m-grey
+        line-height: 24px
+        &::before
+          position: absolute
+          content: ''
+          width: 15px
+          height: 4px
+          background: $color-red
+          left: -30px
+          top: 10px
+          border-radius: 2px
+    & .shadow-box
+      flex-basis: 100%

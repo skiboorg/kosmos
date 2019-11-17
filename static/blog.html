@@ -30,6 +30,7 @@
             <p>8 800 999 99 99</p>
             <p><a href="">Перезвоните мне</a></p>
         </div>
+        <div class="mobile-toggle"></div>
     </div><!-- // header-nav-wrapper -->
 </header>
 <div class="main">
@@ -157,5 +158,16 @@
 
 
 </body>
+<script>
+    let mobile_button = document.getElementsByClassName('mobile-toggle')[0]
+    let mobile_menu = document.getElementsByClassName('header-nav__nav-wrapper')[0]
+
+     mobile_button.onclick = function () {
+        this.classList.toggle('mobile-toggle-active')
+
+        mobile_menu.classList.toggle('mobile-active')
+    }
+
+</script>
 </html>
 
