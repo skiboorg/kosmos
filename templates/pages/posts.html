@@ -35,36 +35,16 @@
         <div class="container">
             <h1>Блог</h1>
             <div class="blog-posts-wrapper">
+                {% for post in allPost %}
                 <div class="blog-post-item">
-                    <a href=""><img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt=""></a>
-                    <h5 class="mb20"><a href="#">Название статьи - пишется в две строки</a></h5>
-                    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus eius libero necessitatibus?</p>
+                    <a href="{% url 'showpost' post.name_slug %}"><img class="mb30" src="{{ post.image.url }}" alt=""></a>
+                    <h5 class="mb20"><a href="{% url 'showpost' post.name_slug %}">{{ post.name }}</a></h5>
+                    <p >{{ post.short_description }}</p>
                 </div><!--// blog-post-item-->
-                <div class="blog-post-item">
-                    <a href=""><img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt=""></a>
-                    <h5 class="mb20"><a href="#">Название статьи - пишется в две строки</a></h5>
-                    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus eius libero necessitatibus?</p>
-                </div><!--// blog-post-item-->
-                <div class="blog-post-item">
-                    <a href=""><img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt=""></a>
-                    <h5 class="mb20"><a href="#">Название статьи - пишется в две строки</a></h5>
-                    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus eius libero necessitatibus?</p>
-                </div><!--// blog-post-item-->
-                <div class="blog-post-item">
-                    <a href=""><img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt=""></a>
-                    <h5 class="mb20"><a href="#">Название статьи - пишется в две строки</a></h5>
-                    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus eius libero necessitatibus?</p>
-                </div><!--// blog-post-item-->
-                <div class="blog-post-item">
-                    <a href=""><img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt=""></a>
-                    <h5 class="mb20"><a href="#">Название статьи - пишется в две строки</a></h5>
-                    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus eius libero necessitatibus?</p>
-                </div><!--// blog-post-item-->
-                <div class="blog-post-item">
-                    <a href=""><img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt=""></a>
-                    <h5 class="mb20"><a href="#">Название статьи - пишется в две строки</a></h5>
-                    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid delectus eius libero necessitatibus?</p>
-                </div><!--// blog-post-item-->
+                {% endfor %}
+
+
+
             </div><!--// blog-posts-wrapper-->
         </div>
 

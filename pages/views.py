@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from blog.models import *
 
 def index(request):
@@ -17,3 +18,8 @@ def about(request):
 
 def services(request):
     return render(request, 'pages/services.html', locals())
+
+
+def robots(request):
+    robotsTxt = f"User-agent: *\nDisallow: /admin/\nHost: http://www.buhkosmos174.ru/\nSitemap: http://www.buhkosmos174.ru/sitemap.xml"
+    return HttpResponse(robotsTxt, content_type="text/plain")

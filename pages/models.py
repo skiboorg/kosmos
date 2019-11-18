@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 from pytils.translit import slugify
 from random import choices
 import string
@@ -8,6 +9,11 @@ class ServiceName(models.Model):
     name_lower = models.CharField(max_length=255, blank=True, null=True, db_index=True)
     name_slug = models.CharField(max_length=255, blank=True, null=True, unique=True, db_index=True)
     price = models.IntegerField('Цена на услугу', blank=False)
+    page_h1 = models.CharField('Тег H1', max_length=255, blank=False, null=True)
+    page_title = models.CharField('Название страницы SEO', max_length=255, blank=False, null=True)
+    page_description = models.CharField('Описание страницы SEO', max_length=255, blank=False, null=True)
+    page_keywords = models.TextField('Keywords SEO', blank=True, null=False)
+    description = RichTextUploadingField('Текст на страницу с услугой', blank=False, null=True)
 
     def save(self, *args, **kwargs):
         slug = slugify(self.name)
@@ -18,6 +24,8 @@ class ServiceName(models.Model):
         self.name_slug = slug + slugRandom
         self.name_lower = self.name.lower()
         super(ServiceName, self).save(*args, **kwargs)
+    def get_absolute_url(self):
+        return f'/service/{self.name_slug}/'
 
     def __str__(self):
         return 'Вид работы : {}'.format(self.name)
