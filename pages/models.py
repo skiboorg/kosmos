@@ -11,9 +11,9 @@ class ServiceName(models.Model):
     price = models.IntegerField('Цена на услугу', blank=False)
     page_h1 = models.CharField('Тег H1', max_length=255, blank=False, null=True)
     page_title = models.CharField('Название страницы SEO', max_length=255, blank=False, null=True)
-    page_description = models.CharField('Описание страницы SEO', max_length=255, blank=False, null=True)
-    page_keywords = models.TextField('Keywords SEO', blank=True, null=False)
-    description = RichTextUploadingField('Текст на страницу с услугой', blank=False, null=True)
+    page_description = models.CharField('Описание страницы SEO', max_length=255, blank=True, null=True)
+    page_keywords = models.TextField('Keywords SEO', blank=True, null=True)
+    description = RichTextUploadingField('Текст на страницу с услугой', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         slug = slugify(self.name)
