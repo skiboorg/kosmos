@@ -18,13 +18,15 @@ class ServiceName(models.Model):
 
     def save(self, *args, **kwargs):
         slug = slugify(self.name)
-        testSlug = ServiceName.objects.filter(name_slug=slug)
-        slugRandom = ''
-        if testSlug:
-            slugRandom = '-'+''.join(choices(string.ascii_lowercase + string.digits, k=2))
-        self.name_slug = slug + slugRandom
+        if self.name_slug != slug:
+            testSlug = ServiceName.objects.filter(name_slug=slug)
+            slugRandom = ''
+            if testSlug:
+                slugRandom = '-' + ''.join(choices(string.ascii_lowercase + string.digits, k=2))
+            self.name_slug = slug + slugRandom
         self.name_lower = self.name.lower()
         super(ServiceName, self).save(*args, **kwargs)
+        
     def get_absolute_url(self):
         return f'/service/{self.name_slug}/'
 
