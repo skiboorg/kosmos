@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block title %}
-    {{ block.super }} - Статья
+   {{ pageTitle }}
 {% endblock %}
 
 {% block keywords %}
-    {{ block.super }}
+    {{ pageKeywords }}
 {% endblock %}
 
 {% block description %}
-    {{ block.super }}
+    {{ pageDescription }}
 {% endblock %}
 
 {% block css %}
@@ -26,30 +26,20 @@
         <div class="breadcrumbs">
             <ul>
                 <li><a href="{% url 'index' %}">Главная</a></li>
-                <li class="active">Услуги</li>
+                <li><a href="{% url 'services' %}">Услуги</a></li>
+                <li class="active">{{ currentService.name }}</li>
             </ul>
         </div>
     </div><!--// breadcrumbs-->
     <section class="about-us">
         <div class="container about-us-inner">
-           <h1>О нас</h1>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aperiam, blanditiis deserunt, eaque eos excepturi illo incidunt iste laboriosam neque officia quae quaerat repudiandae sapiente similique, sit ullam vitae!</span><span>Delectus ea modi, omnis perspiciatis quos rem repudiandae sequi. Architecto aut, beatae commodi, consequuntur cum error exercitationem facere ipsum laborum non, odit porro provident reprehenderit vel velit! Dolorem, similique suscipit!</span><span>Corporis, cum eaque est fuga fugiat ipsa maiores minima quos similique unde? Dolores eligendi et mollitia nobis porro sed voluptates voluptatum! Consequatur culpa, ex facere necessitatibus nostrum pariatur quod voluptatem.</span></p>
+           <h1>{{ currentService.page_h1 }}</h1>
+            {{ currentService.topText | safe }}
         </div>
     </section><!--//about-us-->
     <section class="service-prices">
-        <div class="container-sm service-prices-inner">
-            <div class="service-prices-inner-big-block">
-                <h5>Наименование</h5>
-                <p>Бухгалтерское сопровождение</p>
-                 <p>Бухгалтерское сопровождение</p>
-
-            </div>
-            <div class="service-prices-inner-small-block">
-                <h5>Цена</h5>
-                <p>от 8000 руб/месяц</p>
-                <p>от 8000 руб/месяц</p>
-            </div>
-
+        <div class="container-sm ">
+          {{ currentService.pageTable | safe }}
         </div>
     </section><!--//service-prices-->
     <section class="service-feature">
@@ -114,7 +104,7 @@
     </section>
 
 
-    <section class="callback-form">
+    <section class="callback-form" style="margin-bottom: 40px !important;">
            <div class="quiz-bottom">
             <div class="quiz-bottom-info">
                 <h3>Работаем на результат</h3>
@@ -137,6 +127,12 @@
 
         </div><!--//quiz-bottom-->
     </section><!--//callback-form-->
+<section style="margin-bottom: 40px">
+    <div class="container about-us-inner" >
+         {{ currentService.bottomText | safe }}
+
+    </div>
+</section>
 </div><!--//main-->
 {% endblock %}
 
