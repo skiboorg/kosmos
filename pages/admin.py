@@ -9,3 +9,4 @@ class ServiceNameAdmin(admin.ModelAdmin):
     class Meta:
         model = ServiceName
 admin.site.register(ServiceName,ServiceNameAdmin)
+admin.site.register(SeoTag)

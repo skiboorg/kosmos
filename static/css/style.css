@@ -919,6 +919,11 @@ x:-o-prefocus,
   margin-bottom: 140px;
 }
 
+.service-prices-custom {
+  overflow: auto;
+  margin-bottom: 140px;
+}
+
 .service-prices-inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1044,8 +1049,6 @@ x:-o-prefocus,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .slider-item img {
@@ -1140,16 +1143,6 @@ x:-o-prefocus,
   font-family: "Gotham Regular", sans-serif;
   font-size: 14px;
   color: #292929;
-}
-
-.blog-post {
-  margin-bottom: 100px;
-}
-
-.blog-post-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
 }
 
 .blog-post-text h1 {
@@ -1661,11 +1654,41 @@ x:-o-prefocus,
   background-position-x: 97%;
 }
 
+@media (max-width: 1090px) {
+  .blog-posts-wrapper {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+  .blog-post-item h5 {
+    width: 100%;
+  }
+
+  .blog-post-item p {
+    max-width: none;
+  }
+
+  .blog-post-image {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    text-align: center;
+  }
+
+  .blog-post-text {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .blog-post-text h1 {
+    text-align: center;
+  }
+}
+
 @media (max-width: 1024px) {
-  .grid-col3.blog-posts-wrapper {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  .map-inner .shadow-box {
+    min-width: 320px;
   }
 }
 
@@ -1740,25 +1763,21 @@ x:-o-prefocus,
     transition: all .3s;
   }
 
+  .slider-item {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .map-inner {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px) {
   .blog-posts-wrapper {
     grid-template-columns: 1fr;
-  }
-
-  .blog-post-image {
-    -webkit-box-ordinal-group: 2;
-    -ms-flex-order: 1;
-    order: 1;
-    text-align: center;
-  }
-
-  .blog-post-text {
-    -webkit-box-ordinal-group: 3;
-    -ms-flex-order: 2;
-    order: 2;
-  }
-
-  .blog-post-text h1 {
-    text-align: center;
   }
 }
 
@@ -1816,6 +1835,9 @@ x:-o-prefocus,
 
   .about-us {
     background: none;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .service-feature-item {
@@ -1963,17 +1985,6 @@ x:-o-prefocus,
 
   .about-grid .box-2 {
     height: 290px;
-  }
-
-  .map-inner {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  .map-inner .shadow-box {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
   }
 
   .footer-top {

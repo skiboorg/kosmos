@@ -1,5 +1,8 @@
 .service-prices
   margin-bottom: 140px
+  &-custom
+    overflow: auto
+    margin-bottom: 140px
   &-inner
     display: flex
     flex-wrap: wrap
@@ -86,7 +89,7 @@
   border-radius: 10px
   box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)
   display: flex
-  flex-wrap: wrap
+
   img
     border-bottom-left-radius: 10px
     border-top-left-radius: 10px
@@ -135,7 +138,9 @@
 .callback-form
   margin-bottom: 140px
 
-
+@media (max-width: 768px)
+  .slider-item
+    flex-wrap: wrap
 @media (max-width: 425px)
   .slider-item
     img

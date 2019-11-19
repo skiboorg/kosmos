@@ -24,9 +24,16 @@
         font-family: $f-GL
         color: $color-l-blue
 
-@media (max-width: 425px)
+@media (max-width: 1024px)
+  .map
+     &-inner
+       & .shadow-box
+         min-width: 320px
+
+@media (max-width: 768px)
   .map
      &-inner
        justify-content: center
-       & .shadow-box
-         flex-basis: 100%
+
+
+

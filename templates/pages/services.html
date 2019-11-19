@@ -21,119 +21,42 @@
 
 {% block content %}
     {% include 'header.html' %}
-<div class="main">
-     <div class="container">
+    <div class="main">
+    <div class="container">
         <div class="breadcrumbs">
             <ul>
                 <li><a href="{% url 'index' %}">Главная</a></li>
-                <li><a href="{% url 'services' %}">Услуги</a></li>
-                <li class="active">{{ currentService.name }}</li>
+                <li class="active">Все услуги</li>
             </ul>
         </div>
     </div><!--// breadcrumbs-->
-    <section class="about-us">
-        <div class="container about-us-inner">
-           <h1>{{ currentService.page_h1 }}</h1>
-            {{ currentService.topText | safe }}
-        </div>
-    </section><!--//about-us-->
-    <section class="service-prices">
-        <div class="container-sm ">
-          {{ currentService.pageTable | safe }}
-        </div>
-    </section><!--//service-prices-->
-    <section class="service-feature">
-        <div class="container-sm service-feature-items">
-            <div class="service-feature-item">
-                <div class="service-feature-item-number">
-                    <p style="padding: 25px 20px !important;">1</p>
-                </div>
-                <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
-                </div>
-            </div><!--//service-feature-item-->
-             <div class="service-feature-item">
-                <div class="service-feature-item-number">
-                    <p>2</p>
-                </div>
-                <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
-                </div>
-            </div><!--//service-feature-item-->
-             <div class="service-feature-item">
-                <div class="service-feature-item-number">
-                    <p>3</p>
-                </div>
-                <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
-                </div>
-            </div><!--//service-feature-item-->
-             <div class="service-feature-item">
-                <div class="service-feature-item-number">
-                    <p>4</p>
-                </div>
-                <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
-                </div>
-            </div><!--//service-feature-item-->
-        </div>
 
-    </section><!--//service-features-->
-    <section class="reviews container-sm">
-         <div class="slider" id="slider" >
-        <div class="slider-item">
-            <img src="https://dummyimage.com/400x340/000/fff" alt="">
-            <div class="slider-item-info">
-                <h5>имя фамилия</h5>
-                <span>Предприниматель</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem expedita optio quia sit unde. A aperiam at, consequatur dolores eius fuga ipsam iste magnam maiores molestiae, molestias, nisi porro possimus quae tenetur unde vitae. Assumenda eius eveniet expedita incidunt laudantium nemo non perspiciatis, placeat, quae quis recusandae rerum sed voluptatibus!</p>
+    <section class="blog">
+        <div class="container">
+            <h1>Все услуги</h1>
+            <div class="blog-posts-wrapper">
+                {% for service in allServices %}
+                <div class="blog-post-item">
+                    <a href="{% url 'service' service.name_slug %}">
+                        {% if service.image %}
+                            <img class="mb30" src="{{ service.image.url }}" alt="{{ service.name}}">
+                            {% else %}
+                           <img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt="">
+                        {% endif %}
+
+                    </a>
+                    <h5 class="mb20"><a href="{% url 'service' service.name_slug %}">{{ service.name }}</a></h5>
+                </div><!--// blog-post-item-->
+                {% endfor %}
 
 
 
-            </div>
-
+            </div><!--// blog-posts-wrapper-->
         </div>
 
 
-    </div>
-
-    </section>
-
-
-    <section class="callback-form" style="margin-bottom: 40px !important;">
-           <div class="quiz-bottom">
-            <div class="quiz-bottom-info">
-                <h3>Работаем на результат</h3>
-                <p>Абсолютно по любому вопросу проведём бесплатную квалифицированную консультацию</p>
-                <p>Никакой предоплаты, сначала мы оказываем все необходимые вам услуги, а только потом вы их оплачиваете</p>
-                <p>У нас нет очередей, мы не заставляем вас ждать, а берем ваш заказ и моментально приступаем к выполнению</p>
-                <p>Благодаря нам, вам не нужно держать бухгалтера в своем штате, мы в любой момент выполним тот же объем дешевле</p>
-            </div>
-           <div class="shadow-box">
-                    <div id="form_content" class="shadow-box-inner">
-                        <h5>Остались вопросы ?</h5>
-                        <span>Мы перезвоним</span>
-
-                        <input type="text" id="form_name" placeholder="Как к Вам обращаться?">
-                        <input type="tel" id="form_phone"  class="masked-phone" placeholder="Ваш сотовый номер" data-phonemask="+7(___)___-__-__" />
-                        <a   class="btn" onclick="sendForm('form')">Перезвоните мне</a>
-                        <p>Нажимая на кнопку, в принимаете <a href="#">условия передачи данных</a></p>
-                    </div>
-                </div>
-
-        </div><!--//quiz-bottom-->
-    </section><!--//callback-form-->
-<section style="margin-bottom: 40px">
-    <div class="container about-us-inner" >
-         {{ currentService.bottomText | safe }}
-
-    </div>
-</section>
-</div><!--//main-->
+    </section><!--// blog-->
+</div><!-- // main -->
 {% endblock %}
 
 {% block js %}

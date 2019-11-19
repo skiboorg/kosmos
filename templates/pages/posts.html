@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block title %}
-    {{ block.super }} - Статья
+   {{ pageTitle }}
 {% endblock %}
 
 {% block keywords %}
-    {{ block.super }}
+    {{ pageKeywords }}
 {% endblock %}
 
 {% block description %}
-    {{ block.super }}
+    {{ pageDescription }}
 {% endblock %}
 
 {% block css %}
@@ -33,7 +33,7 @@
 
     <section class="blog">
         <div class="container">
-            <h1>Блог</h1>
+            <h1>Полезные статьи</h1>
             <div class="blog-posts-wrapper">
                 {% for post in allPost %}
                 <div class="blog-post-item">
