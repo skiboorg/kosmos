@@ -490,6 +490,13 @@ button:hover {
   color: #292929;
 }
 
+.about-us-inner h2 {
+  font-family: "Gotham Bold", sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #292929;
+}
+
 .header.header-no-bg {
   padding: 20px;
   border-bottom: 1px solid #cecece;
