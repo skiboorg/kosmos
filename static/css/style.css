@@ -480,6 +480,16 @@ button:hover {
   transition: left 0.3s ease-in;
 }
 
+.about-us-inner p {
+  margin-bottom: 10px;
+}
+
+.about-us-inner ol li {
+  font-family: "Gotham Regular", sans-serif;
+  font-size: 16px;
+  color: #292929;
+}
+
 .header.header-no-bg {
   padding: 20px;
   border-bottom: 1px solid #cecece;
