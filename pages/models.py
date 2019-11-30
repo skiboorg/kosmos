@@ -56,6 +56,12 @@ class SeoTag(models.Model):
                                         null=True)
     aboutKeywords = models.TextField('Тег Keywords для страницы о компании', blank=True, null=True)
 
+    yandexMetrika = models.TextField('Код Яндекс метрики',  blank=True, null=True)
+    fbPixel = models.TextField('Код пикселя', blank=True, null=True)
+    yandexTAG = models.CharField('Код подтверждения Яндекс', max_length=255, blank=True, null=True)
+    googleTAG = models.CharField('Код подтверждения google', max_length=255, blank=True, null=True)
+
+
     def __str__(self):
         return 'Теги для статических страниц'
 

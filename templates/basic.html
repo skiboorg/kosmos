@@ -12,6 +12,8 @@
     <title>{% block title %}  KOSMOS {% endblock %} </title>
     <meta name="keywords" content="{% block keywords %} keywords {% endblock %}">
     <meta name="description" content="{% block description %} description {% endblock %}"/>
+    {{ seotag.yandexTAG }}
+    {{ seotag.googleTAG }}
     {% block css %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
