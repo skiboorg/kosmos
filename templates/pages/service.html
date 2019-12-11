@@ -31,10 +31,12 @@
             </ul>
         </div>
     </div><!--// breadcrumbs-->
-    <section class="about-us">
-        <div class="container about-us-inner">
-           <h1>{{ currentService.page_h1 }}</h1>
-            {{ currentService.topText | safe }}
+  <section class="about-us">
+        <div class="container ">
+             <h1>{{ currentService.page_h1 }}</h1>
+            <div class="about-us-text small">
+                {{ currentService.topText | safe }}
+            </div>
         </div>
     </section><!--//about-us-->
     {% if currentService.pageTable %}
@@ -129,12 +131,13 @@
 
         </div><!--//quiz-bottom-->
     </section><!--//callback-form-->
-<section style="margin-bottom: 40px">
-    <div class="container about-us-inner" >
-         {{ currentService.bottomText | safe }}
-
-    </div>
-</section>
+  <section style="margin-bottom: 40px">
+        <div class="container">
+           <div class=" about-us-text wide">
+               {{ currentService.bottomText | safe }}
+           </div>
+        </div>
+    </section>
 </div><!--//main-->
 {% endblock %}
 

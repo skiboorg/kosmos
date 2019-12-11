@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-   {{ pageTitle }}
+    {{ pageTitle }}
 {% endblock %}
 
 {% block keywords %}
@@ -12,219 +12,98 @@
 {% block description %}
     {{ pageDescription }}
 {% endblock %}
-
 {% block css %}
     {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/luminous-basic.min.css' %}">
 {% endblock %}
-
-
-
 {% block content %}
     {% include 'header.html' %}
- <div class="main">
-     <div class="container">
-        <div class="breadcrumbs">
-            <ul>
-                <li><a href="{% url 'index' %}">Главная</a></li>
-                <li class="active">Полезные статьи</li>
+    <div class="main">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="{% url 'index' %}">Главная</a></li>
+                    <li class="active">Полезные статьи</li>
+                </ul>
+            </div>
+        </div><!--// breadcrumbs-->
+        <section class="about-us">
+            <div class="container about-us-inner">
+                <h1>О нас</h1>
+                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aperiam, blanditiis deserunt, eaque eos excepturi illo incidunt iste laboriosam neque officia quae quaerat repudiandae sapiente similique, sit ullam vitae!</span><span>Delectus ea modi, omnis perspiciatis quos rem repudiandae sequi. Architecto aut, beatae commodi, consequuntur cum error exercitationem facere ipsum laborum non, odit porro provident reprehenderit vel velit! Dolorem, similique suscipit!</span><span>Corporis, cum eaque est fuga fugiat ipsa maiores minima quos similique unde? Dolores eligendi et mollitia nobis porro sed voluptates voluptatum! Consequatur culpa, ex facere necessitatibus nostrum pariatur quod voluptatem.</span></p>
+            </div>
+        </section>
+        <section class="container about-us-gallery">
+            <ul class="gallery-wrapper">
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
+                <li>
+                    <a class="gallery-demo" href="{% static 'img/gall.png' %}">
+                        <img src="{% static 'img/gall.png' %}" alt="Coyote">
+                    </a>
+                </li>
             </ul>
-        </div>
-    </div><!--// breadcrumbs-->
-    <section class="about-us">
-        <div class="container about-us-inner">
-           <h1>О нас</h1>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aperiam, blanditiis deserunt, eaque eos excepturi illo incidunt iste laboriosam neque officia quae quaerat repudiandae sapiente similique, sit ullam vitae!</span><span>Delectus ea modi, omnis perspiciatis quos rem repudiandae sequi. Architecto aut, beatae commodi, consequuntur cum error exercitationem facere ipsum laborum non, odit porro provident reprehenderit vel velit! Dolorem, similique suscipit!</span><span>Corporis, cum eaque est fuga fugiat ipsa maiores minima quos similique unde? Dolores eligendi et mollitia nobis porro sed voluptates voluptatum! Consequatur culpa, ex facere necessitatibus nostrum pariatur quod voluptatem.</span></p>
-        </div>
-
-
-    </section>
-
-    <section class="container about-us-gallery">
-				<ul class="lb-album">
-					<li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-                    <li>
-						<a href="#image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01">
-
-						</a>
-						<div class="lb-overlay" id="image-1">
-							<img src="{% static 'img/gallery-item-small.png' %}" alt="image01" />
-							<div>
-                                <h3>Название </h3>
-								<p>описание</p>
-							</div>
-							<a href="#page" class="lb-close">x Закрыть</a>
-						</div>
-					</li><!--//lb-album-item-->
-
-
-				</ul>
-			</section>
-
-
-
-
-
-</div><!--//main-->
+        </section>
+    </div><!--//main-->
 {% endblock %}
-
 {% block js %}
-
     {{ block.super }}
-
-
-
+    <script src="{% static 'js/Luminous.min.js' %}"></script>
+    {{ block.super }}
+    <script>
+        new LuminousGallery(document.querySelectorAll(".gallery-demo"));
+    </script>
 {% endblock %}

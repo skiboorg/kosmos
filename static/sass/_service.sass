@@ -3,42 +3,68 @@
   &-custom
     overflow: auto
     margin-bottom: 140px
-  &-inner
-    display: flex
-    flex-wrap: wrap
-    h5
-      font-family: $f-GM
-      font-size: 21px
-      color: $color-text-d-grey
-      padding: 25px 0 25px 40px
-      border-bottom: 1px solid $color-border
-    p
+    table
       font-family: $f-GR
       font-size: 16px
       color: $color-text-m-grey
-      padding: 25px 0 25px 40px
-      border-bottom: 1px solid $color-border
-      &:last-child
-        border-bottom: none
-        padding-top: 25px
-
-    &-big-block
-      position: relative
-      box-sizing: border-box
-      border-radius: 5px
-      padding: 30px
-      border-top: 2px solid $color-red
-      box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)
-      flex-basis: 65%
-      flex-grow: 1
-    &-small-block
-      border-radius: 5px
-      box-sizing: border-box
-      padding: 30px
-      border-top: 2px solid $color-l-blue
-      box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)
-      flex-basis: 35%
-      flex-grow: 1
+      border: none
+      thead
+        tr
+          th
+            font-family: $f-GM
+            background: $color-d-blue
+            color: #ffffff
+            text-align: center
+            line-height: 50px
+          td
+            font-family: $f-GR
+            background: $color-l-blue
+            color: #ffffff
+            text-align: center
+            line-height: 40px
+      tr
+        td
+          text-align: center
+          line-height: 40px
+  //&-custom
+  //  overflow: auto
+  //  margin-bottom: 140px
+  //&-inner
+  //  display: flex
+  //  flex-wrap: wrap
+  //  h5
+  //    font-family: $f-GM
+  //    font-size: 21px
+  //    color: $color-text-d-grey
+  //    padding: 25px 0 25px 40px
+  //    border-bottom: 1px solid $color-border
+  //  p
+  //    font-family: $f-GR
+  //    font-size: 16px
+  //    color: $color-text-m-grey
+  //    padding: 25px 0 25px 40px
+  //    border-bottom: 1px solid $color-border
+  //    &:last-child
+  //      border-bottom: none
+  //      padding-top: 25px
+  //
+  //  &-big-block
+  //    position: relative
+  //    box-sizing: border-box
+  //    border-radius: 5px
+  //    padding: 30px
+  //    border-top: 2px solid $color-red
+  //    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)
+  //    flex-basis: 65%
+  //    flex-grow: 1
+  //  &-small-block
+  //    border-radius: 5px
+  //    box-sizing: border-box
+  //    padding: 30px
+  //    border-top: 2px solid $color-l-blue
+  //    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)
+  //    flex-basis: 35%
+  //    flex-grow: 1
 
 .service-feature
   margin-bottom: 140px
