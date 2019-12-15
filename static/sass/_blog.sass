@@ -1,9 +1,9 @@
-.blog
+.blog, .blog-post
   margin-bottom: 130px
 .blog-posts-wrapper
   display: grid
   grid-gap: 30px
-  grid-template-columns: repeat(auto-fill, minmax(360px, 330px))
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr))
 
 .blog-post-item
 
@@ -42,9 +42,9 @@
   img
     border-radius: 10px
 
-@media (max-width: 1090px)
+@media (max-width: 760px)
   .blog-posts-wrapper
-    grid-template-columns:  1fr 1fr
+    //grid-template-columns:  1fr 1fr
     text-align: center
   .blog-post-item
     h5
@@ -60,6 +60,3 @@
     h1
       text-align: center
 
-@media (max-width: 760px)
-  .blog-posts-wrapper
-    grid-template-columns:  1fr

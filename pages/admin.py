@@ -10,3 +10,4 @@ class ServiceNameAdmin(admin.ModelAdmin):
         model = ServiceName
 admin.site.register(ServiceName,ServiceNameAdmin)
 admin.site.register(SeoTag)
+admin.site.register(ServiceSpecialist)

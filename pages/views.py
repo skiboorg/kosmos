@@ -62,7 +62,18 @@ def services(request):
 
 def service(request,slug):
     currentService = get_object_or_404(ServiceName, name_slug=slug)
+    features = currentService.features.split(';')
+    print(features)
+    if features[0] == '':
+        features =False
     pageTitle = currentService.page_title
+    allSpec = currentService.specialist.all()
+    try:
+        allServices = ServiceName.objects.all()[3]
+    except:
+        pass
+    allPost = BlogPost.objects.filter(is_active=True, service=currentService)
+    allServices = ServiceName.objects.all()[:3]
     pageDescription = currentService.page_description
     pageKeywords = currentService.page_keywords
     return render(request, 'pages/service.html', locals())

@@ -1,8 +1,9 @@
 {% extends  'basic.html' %}
 {% load static %}
+{% load mytags %}
 
 {% block title %}
-   {{ pageTitle }}
+    {{ pageTitle }}
 {% endblock %}
 
 {% block keywords %}
@@ -21,103 +22,104 @@
 
 {% block content %}
     {% include 'header.html' %}
-<div class="main">
-     <div class="container">
-        <div class="breadcrumbs">
-            <ul>
-                <li><a href="{% url 'index' %}">Главная</a></li>
-                <li><a href="{% url 'services' %}">Услуги</a></li>
-                <li class="active">{{ currentService.name }}</li>
-            </ul>
-        </div>
-    </div><!--// breadcrumbs-->
-  <section class="about-us">
-        <div class="container ">
-             <h1>{{ currentService.page_h1 }}</h1>
-            <div class="about-us-text small">
-                {{ currentService.topText | safe }}
+    <div class="main">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="{% url 'index' %}">Главная</a></li>
+                    <li><a href="{% url 'services' %}">Услуги</a></li>
+                    <li class="active">{{ currentService.name }}</li>
+                </ul>
             </div>
-        </div>
-    </section><!--//about-us-->
-    {% if currentService.pageTable %}
-     <section class="service-prices-custom">
-        <div class="container-sm ">
-          {{ currentService.pageTable | safe }}
-        </div>
-    </section><!--//service-prices-->
-    {% endif %}
-    <section class="service-feature">
+        </div><!--// breadcrumbs-->
+        <section class="about-us" style="background: url({{ currentService.get_header }}) center no-repeat">
+            <div class="container ">
+                <h1>{{ currentService.page_h1 }}</h1>
+                <div class="about-us-text small">
+                    {{ currentService.topText | safe }}
+                    <a style="margin-top: 20px" onclick="toggleModal('callback-modal')" class="btn ">Заказать консультацию</a>
+                </div>
+            </div>
+        </section><!--//about-us-->
+        {% if currentService.pageTable %}
+            <section class="service-prices-custom">
+                <div class="container-sm ">
+                    {{ currentService.pageTable | safe }}
+                </div>
+            </section><!--//service-prices-->
+        {% endif %}
+        {% if features %}
+            <section class="service-feature">
+                <div class="container-sm service-feature-items">
+                    {% for item in features %}
+                        <div class="service-feature-item">
+                            <div class="service-feature-item-number">
+                                <p style="padding: 25px 20px !important;">{{ forloop.counter }}</p>
+                            </div>
+                            <div class="service-feature-item-info">
+                                <h5>{{ item | gettext }}</h5>
+                                <p>{{ item | getheader }}</p>
+                            </div>
+                        </div><!--//service-feature-item-->
+                    {% endfor %}
+                </div>
+
+            </section><!--//service-features-->
+        {% endif %}
+        {% if allSpec%}
+            <section class="reviews container-sm">
+                <div class="slider" id="slider" >
+                    {% for item in allSpec %}
+                        <div class="slider-item">
+                            <img src="{{ item.image.url }}" alt="">
+                            <div class="slider-item-info">
+                                <h5>{{ item.fio }}</h5>
+                                <span>{{ item.work }}</span>
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
+      <section class="service-feature">
         <div class="container-sm service-feature-items">
             <div class="service-feature-item">
                 <div class="service-feature-item-number">
-                    <p style="padding: 25px 20px !important;">1</p>
+                    <p class="style2"><span>-20 %</span></p>
                 </div>
                 <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
+
+                    <p>Условия предоставления скидки 20%</p>
+                    <a class="btn" onclick="toggleModal('callback-modal')">Узнать условия</a>
                 </div>
             </div><!--//service-feature-item-->
-             <div class="service-feature-item">
+            <div class="service-feature-item">
                 <div class="service-feature-item-number">
-                    <p>2</p>
+                    <p class="style2" style="padding: 22px !important;"> <img src="{% static 'img/pig.png' %}"></p>
                 </div>
                 <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
+
+                    <p >Первый месяц обслуживания бесплатно</p>
+                     <a class="btn" onclick="toggleModal('callback-modal')">Узнать условия</a>
                 </div>
             </div><!--//service-feature-item-->
-             <div class="service-feature-item">
-                <div class="service-feature-item-number">
-                    <p>3</p>
-                </div>
-                <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
-                </div>
-            </div><!--//service-feature-item-->
-             <div class="service-feature-item">
-                <div class="service-feature-item-number">
-                    <p>4</p>
-                </div>
-                <div class="service-feature-item-info">
-                   <h5>безопасность</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam magnam optio.</p>
-                </div>
-            </div><!--//service-feature-item-->
+
         </div>
 
     </section><!--//service-features-->
-    <section class="reviews container-sm">
-         <div class="slider" id="slider" >
-        <div class="slider-item">
-            <img src="https://dummyimage.com/400x340/000/fff" alt="">
-            <div class="slider-item-info">
-                <h5>имя фамилия</h5>
-                <span>Предприниматель</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem expedita optio quia sit unde. A aperiam at, consequatur dolores eius fuga ipsam iste magnam maiores molestiae, molestias, nisi porro possimus quae tenetur unde vitae. Assumenda eius eveniet expedita incidunt laudantium nemo non perspiciatis, placeat, quae quis recusandae rerum sed voluptatibus!</p>
 
-
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-    </section>
-
-
-    <section class="callback-form" style="margin-bottom: 40px !important;">
-           <div class="quiz-bottom">
-            <div class="quiz-bottom-info">
-                <h3>Работаем на результат</h3>
-                <p>Абсолютно по любому вопросу проведём бесплатную квалифицированную консультацию</p>
-                <p>Никакой предоплаты, сначала мы оказываем все необходимые вам услуги, а только потом вы их оплачиваете</p>
-                <p>У нас нет очередей, мы не заставляем вас ждать, а берем ваш заказ и моментально приступаем к выполнению</p>
-                <p>Благодаря нам, вам не нужно держать бухгалтера в своем штате, мы в любой момент выполним тот же объем дешевле</p>
-            </div>
-           <div class="shadow-box">
+        <section class="callback-form" style="margin-bottom: 40px !important;">
+            <div class="quiz-bottom">
+                <div class="quiz-bottom-info">
+                    <h3>Работаем на результат</h3>
+                    <p>Абсолютно по любому вопросу проведём бесплатную квалифицированную консультацию</p>
+                    <p>Никакой предоплаты, сначала мы оказываем все необходимые вам услуги, а только потом вы их оплачиваете</p>
+                    <p>У нас нет очередей, мы не заставляем вас ждать, а берем ваш заказ и моментально приступаем к выполнению</p>
+                    <p>Благодаря нам, вам не нужно держать бухгалтера в своем штате, мы в любой момент выполним тот же объем дешевле</p>
+                </div>
+                <div class="shadow-box">
                     <div id="form_content" class="shadow-box-inner">
                         <h5>Остались вопросы ?</h5>
                         <span>Мы перезвоним</span>
@@ -129,16 +131,47 @@
                     </div>
                 </div>
 
-        </div><!--//quiz-bottom-->
-    </section><!--//callback-form-->
-  <section style="margin-bottom: 40px">
-        <div class="container">
-           <div class=" about-us-text wide">
-               {{ currentService.bottomText | safe }}
-           </div>
-        </div>
+            </div><!--//quiz-bottom-->
+        </section><!--//callback-form-->
+
+    <section style="margin-bottom: 120px" class="container">
+        <h3>Другие услуги</h3>
+                  <div class="blog-posts-wrapper">
+                {% for service in allServices %}
+                <div class="blog-post-item">
+                    <a href="{% url 'service' service.name_slug %}">
+                        {% if service.image %}
+                            <img class="mb30" src="{{ service.image.url }}" alt="{{ service.name}}">
+                            {% else %}
+                           <img class="mb30" src="https://dummyimage.com/360x250/000/fff" alt="">
+                        {% endif %}
+
+                    </a>
+                    <h5 class="mb20"><a href="{% url 'service' service.name_slug %}">{{ service.name }}</a></h5>
+                </div><!--// blog-post-item-->
+                {% endfor %}
+            </div><!--// blog-posts-wrapper-->
     </section>
-</div><!--//main-->
+    <section style="margin-bottom: 120px" class="container blog">
+        <h3>Полезные статьи</h3>
+             <div class="blog-posts-wrapper">
+                {% for post in allPost %}
+                <div class="blog-post-item">
+                    <a href="{% url 'showpost' post.name_slug %}"><img class="mb30" src="{{ post.image.url }}" alt=""></a>
+                    <h5 class="mb20"><a href="{% url 'showpost' post.name_slug %}">{{ post.name }}</a></h5>
+                    <p >{{ post.short_description }}</p>
+                </div><!--// blog-post-item-->
+                {% endfor %}
+            </div><!--// blog-posts-wrapper-->
+    </section>
+        <section style="margin-bottom: 120px">
+            <div class="container">
+                <div class=" about-us-text wide">
+                    {{ currentService.bottomText | safe }}
+                </div>
+            </div>
+        </section>
+    </div><!--//main-->
 {% endblock %}
 
 {% block js %}
