@@ -28,8 +28,7 @@ class ServiceName(models.Model):
                                     upload_to='services_img/', blank=True, null=True)
     name_lower = models.CharField(max_length=255, blank=True, null=True, db_index=True)
     page_h2 = models.CharField('Заголовок блока приемущества', max_length=255, blank=True, null=True)
-    features = models.TextField('Блок с цифрами. Элементы разделяются точкой с запятой, элемент состоит из '
-                                'заголовка и описания. Заголовок и описание разделяются дефисом', blank=True,null=True)
+    features = models.TextField('Блок с цифрами. Элементы разделяются точкой с запятой', blank=True,null=True)
     name_slug = models.CharField(max_length=255, blank=True, null=True, unique=True, db_index=True)
     page_h1 = models.CharField('Тег H1', max_length=255, blank=False, null=True)
     page_title = models.CharField('Название страницы SEO', max_length=255, blank=False, null=True)

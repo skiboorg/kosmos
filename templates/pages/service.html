@@ -44,7 +44,9 @@
         {% if currentService.pageTable %}
             <section class="service-prices-custom">
                 <div class="container-sm ">
+                      <div class="service-prices-custom-table">
                     {{ currentService.pageTable | safe }}
+                      </div>
                 </div>
             </section><!--//service-prices-->
         {% endif %}
@@ -60,8 +62,7 @@
                                     <p {% if forloop.counter == 1 %}style="padding: 25px 19px;"{% endif %}>{{ forloop.counter }}</p>
                                 </div>
                                 <div class="service-feature-item-info">
-                                    <h5>{{ item | gettext }}</h5>
-                                    <p>{{ item | getheader }}</p>
+                                    <p>{{ item }}</p>
                                 </div>
                             </div><!--//service-feature-item-->
                         {% endfor %}

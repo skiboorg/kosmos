@@ -494,6 +494,22 @@ input::placeholder {
   color: #292929;
 }
 
+.list-style-1 li {
+  position: relative;
+  list-style: none !important;
+}
+
+.list-style-1 li:before {
+  position: absolute;
+  content: '\2713';
+  left: -35px;
+  top: 5px;
+  background: #5d96e5;
+  border-radius: 50%;
+  color: #fff;
+  padding: 0px 6px;
+}
+
 .header.header-no-bg {
   padding: 20px;
   border-bottom: 1px solid #cecece;
@@ -863,22 +879,23 @@ input::placeholder {
   margin-bottom: 140px;
 }
 
-.service-prices-custom table {
+.service-prices-custom-table table {
   font-family: "Gotham Regular", sans-serif;
   font-size: 16px;
   color: #292929;
   border: none;
+  margin-bottom: 20px !important;
 }
 
-.service-prices-custom table thead tr th {
+.service-prices-custom-table table thead tr th {
   font-family: "Gotham Medium", sans-serif;
   background: #456dab;
   color: #ffffff;
   text-align: center;
-  line-height: 50px;
+  line-height: 40px;
 }
 
-.service-prices-custom table thead tr td {
+.service-prices-custom-table table thead tr td {
   font-family: "Gotham Regular", sans-serif;
   background: #5d96e5;
   color: #ffffff;
@@ -886,7 +903,7 @@ input::placeholder {
   line-height: 40px;
 }
 
-.service-prices-custom table tr td {
+.service-prices-custom-table table tr td {
   text-align: center;
   line-height: 40px;
 }
@@ -1125,6 +1142,7 @@ input::placeholder {
 
 .blog-post-image img {
   border-radius: 10px;
+  width: 100%;
 }
 
 .quiz {

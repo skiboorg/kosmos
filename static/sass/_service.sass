@@ -3,29 +3,33 @@
   &-custom
     overflow: auto
     margin-bottom: 140px
-    table
-      font-family: $f-GR
-      font-size: 16px
-      color: $color-text-m-grey
-      border: none
-      thead
+    &-table
+
+      table
+        font-family: $f-GR
+        font-size: 16px
+        color: $color-text-m-grey
+        border: none
+        margin-bottom: 20px !important
+        thead
+          tr
+            th
+              font-family: $f-GM
+              background: $color-d-blue
+              color: #ffffff
+              text-align: center
+              line-height: 40px
+            td
+              font-family: $f-GR
+              background: $color-l-blue
+              color: #ffffff
+              text-align: center
+              line-height: 40px
         tr
-          th
-            font-family: $f-GM
-            background: $color-d-blue
-            color: #ffffff
-            text-align: center
-            line-height: 50px
           td
-            font-family: $f-GR
-            background: $color-l-blue
-            color: #ffffff
             text-align: center
             line-height: 40px
-      tr
-        td
-          text-align: center
-          line-height: 40px
+
     h2, h3
       color: $color-text-d-grey
       font-family: $f-GB
