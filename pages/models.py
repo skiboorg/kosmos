@@ -27,6 +27,7 @@ class ServiceName(models.Model):
     imageHeader = models.ImageField('Изображение для бекграунда страницы с услугой (1920х560)',
                                     upload_to='services_img/', blank=True, null=True)
     name_lower = models.CharField(max_length=255, blank=True, null=True, db_index=True)
+    page_h2 = models.CharField('Заголовок блока приемущества', max_length=255, blank=True, null=True)
     features = models.TextField('Блок с цифрами. Элементы разделяются точкой с запятой, элемент состоит из '
                                 'заголовка и описания. Заголовок и описание разделяются дефисом', blank=True,null=True)
     name_slug = models.CharField(max_length=255, blank=True, null=True, unique=True, db_index=True)
@@ -94,5 +95,4 @@ class SeoTag(models.Model):
     class Meta:
         verbose_name = "Теги для статических страниц"
         verbose_name_plural = "Теги для статических страниц"
-
 

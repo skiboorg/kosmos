@@ -6,10 +6,10 @@ from pages.models import ServiceName
 import string
 
 class BlogPost(models.Model):
-    name = models.CharField('Название (40 символов)', max_length=40, blank=False, null=True)
+    name = models.CharField('Название (120 символов)', max_length=120, blank=False, null=True)
     service = models.ForeignKey(ServiceName, blank=True, null=True, verbose_name='Относится к услуге', on_delete=models.SET_NULL)
     name_slug = models.CharField(max_length=255, blank=True, null=True)
-    image = models.ImageField('Изображение превью (555 x 390)', upload_to='blog_img/', blank=True)
+    image = models.ImageField('Изображение превью (555 x 390)', upload_to='blog_img/', blank=False)
     page_h1 = models.CharField('Тег H1', max_length=255, blank=False, null=True)
     page_title = models.CharField('Название страницы SEO', max_length=255, blank=False, null=True)
     page_description = models.CharField('Описание страницы SEO', max_length=255, blank=False, null=True)

@@ -62,9 +62,11 @@ def services(request):
 
 def service(request,slug):
     currentService = get_object_or_404(ServiceName, name_slug=slug)
-    features = currentService.features.split(';')
-    print(features)
-    if features[0] == '':
+    try:
+        features = currentService.features.split(';')
+        if features[0] == '':
+            features = False
+    except:
         features =False
     pageTitle = currentService.page_title
     allSpec = currentService.specialist.all()

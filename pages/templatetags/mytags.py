@@ -4,9 +4,13 @@ register = template.Library()
 
 @register.filter
 def gettext(data):
-    print(data)
-    return data.split('-')[0]
+    try:
+        return data.split('-')[0]
+    except:
+        return 'Неверно указаны разделители в описании блока'
 @register.filter
 def getheader(data):
-    print(data)
-    return data.split('-')[1]
+    try:
+        return data.split('-')[1]
+    except:
+        return 'Неверно указаны разделители в описании блока'
